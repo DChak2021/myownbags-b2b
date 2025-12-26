@@ -1,0 +1,228 @@
+/* Navbar with Glassmorphism */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(215, 204, 200, 0.3);
+    animation: slideInDown 0.5s ease;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.logo-link {
+    transition: var(--transition-base);
+}
+
+.logo-link:hover {
+    transform: scale(1.02);
+}
+
+.logo h1 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition-base);
+    font-size: 1.05rem;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width var(--transition-base);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.contact-link {
+    background: var(--gradient-primary);
+    color: white !important;
+    padding: 0.7rem 1.8rem;
+    border-radius: 8px;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-md);
+}
+
+.contact-link::after {
+    display: none;
+}
+
+.contact-link:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-page {
+    padding: 3rem 0;
+    min-height: 60vh;
+}
+
+/* Premium Footer */
+.footer {
+    background: var(--gradient-hero);
+    color: white;
+    padding: 3.5rem 0 1.5rem;
+    margin-top: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-accent);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-section h3 {
+    color: var(--accent-light);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+    font-family: var(--font-heading);
+}
+
+.footer-section h4 {
+    color: var(--accent-light);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-family: var(--font-heading);
+}
+
+.footer-section p {
+    opacity: 0.95;
+    line-height: 1.8;
+    margin-bottom: 0.6rem;
+}
+
+.footer-section a {
+    display: block;
+    color: white;
+    opacity: 0.9;
+    margin-bottom: 0.6rem;
+    transition: var(--transition-base);
+    padding: 0.3rem 0;
+}
+
+.footer-section a:hover {
+    opacity: 1;
+    color: var(--accent-light);
+    transform: translateX(5px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1.8rem;
+    text-align: center;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+main {
+    min-height: calc(100vh - 200px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-content {
+        padding: 1rem 0;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.6rem;
+    }
+
+    .contact-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-section a:hover {
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-links {
+        gap: 0.8rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+}
